@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  ContainerA:
+    image: postgres
+    volumes:
+      - Volume1:/app
+      - /src:/src_hote
+    networks:
+      - Reseau1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_USER: odoo
+
+  ContainerB:
+    image: odoo
+    volumes:
+      - Volume1:/app1
+      - Volume2:/app2
+    networks:
+      - Reseau1
+      - Reseau2
+
+  ContainerC:
+    image: nginx
+    volumes:
+      - Volume2:/app
+    networks:
+      - Reseau2
+
+volumes:
+  Volume1:
+  Volume2:
+
+networks:
+  Reseau1:
+  Reseau2:
+

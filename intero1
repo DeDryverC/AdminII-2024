@@ -1,0 +1,11 @@
+docker run --name wordpress_wordpress -p 8080:80 -v wordpress_data:/var/www/html -e DB_NAME=wordpress,DB_PASSWORD=my-secret-password -d wordpress
+docker run --name wordpress_mysql -e MYSQL_ROOT_PASSWORD=my-secret-password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wp_user -e MYSQL_PASSWORD=wp_pwd -d mysql:8.3.0
+
+docker network create --attachable wordpress_net
+docker network connect wordpress_net wordpress_wordpress
+docker network connect wordpress_net wordpress_mysql
+
+
+
+
+
