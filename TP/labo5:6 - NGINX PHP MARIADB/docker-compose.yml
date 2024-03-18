@@ -1,0 +1,66 @@
+version: '3.1'
+
+services:
+    reverseproxy:
+        image: nginx:stable-perl
+        container_name: nginxrp
+        volumes:
+            - ./certbot/www:/var/www/certbot/:ro
+            - ./certbot/conf/:/etc/nginx/ssl/:ro
+            - ./nginx/html:/var/www/html:ro
+            - ./nginx/conf/b2b.conf:/etc/nginx/conf.d/b2b.conf:ro
+            - ./nginx/conf/erp.conf:/etc/nginx/conf.d/erp.conf:ro
+            - ./nginx/conf/core.conf:/etc/nginx/conf.d/core.conf:ro
+            - ./nginx/conf/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
+            - ./nginx/conf/portal.conf:/etc/nginx/conf.d/portal.conf:ro
+            - ./web/src/portal:/var/www/portal/html:ro
+            - ./web/src/b2b:/var/www/b2b/html:ro
+            - ./web/src/erp:/var/www/erp/html:ro
+        ports:
+            - "80:80"
+            - "443:443"
+        depends_on:
+            - php
+            - mariadb
+            - certbot
+        networks:
+          - internal
+        restart: always
+    mariadb:
+        image: mariadb:11.2
+        hostname: mariadb
+        container_name: mariadb
+        restart: always
+        volumes:
+            - ./db/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+            - ./db/mariadb/conf.d:/etc/mysql/conf.d:ro
+        environment:
+            - db/root.env
+            - db.env
+        ports:
+            - "3306:3306"
+        networks:
+          - internal
+    php:
+        build:
+          context: ./php
+        hostname: php
+        networks:
+          - internal
+        container_name: php
+        volumes:
+          - ./php/src/b2b:/var/www/b2b/html:ro
+          - ./php/src/erp:/var/www/erp/html:ro
+        restart: unless-stopped
+        working_dir: /var/www/b2b/html
+        expose:
+          - 9000
+    certbot:
+        image: certbot/certbot:v2.6.0
+        volumes:
+          - ./certbot/www/:/var/www/certbot/:rw
+          - ./certbot/conf/:/etc/letsencrypt/:rw
+
+networks:
+  internal:
+    driver: bridge
