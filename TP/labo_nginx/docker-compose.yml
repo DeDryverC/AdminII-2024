@@ -34,9 +34,9 @@ services:
         volumes:
             - ./db/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
             - ./db/mariadb/conf.d:/etc/mysql/conf.d:ro
-        environment:
-            - db/root.env
-            - db.env
+        env_file:
+            - ./db/root.env
+            - ./db.env
         ports:
             - "3306:3306"
         networks:
