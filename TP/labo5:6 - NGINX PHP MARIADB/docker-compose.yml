@@ -5,8 +5,8 @@ services:
         image: nginx:stable-perl
         container_name: nginxrp
         volumes:
-            - ./certbot/www:/var/www/certbot/:ro
-            - ./certbot/conf/:/etc/nginx/ssl/:ro
+#            - ./certbot/www:/var/www/certbot/:ro
+#            - ./certbot/conf/:/etc/nginx/ssl/:ro
             - ./nginx/html:/var/www/html:ro
             - ./nginx/conf/b2b.conf:/etc/nginx/conf.d/b2b.conf:ro
             - ./nginx/conf/erp.conf:/etc/nginx/conf.d/erp.conf:ro
@@ -22,7 +22,7 @@ services:
         depends_on:
             - php
             - mariadb
-            - certbot
+#            - certbot
         networks:
           - internal
         restart: always
@@ -55,11 +55,11 @@ services:
         working_dir: /var/www/b2b/html
         expose:
           - 9000
-    certbot:
-        image: certbot/certbot:v2.6.0
-        volumes:
-          - ./certbot/www/:/var/www/certbot/:rw
-          - ./certbot/conf/:/etc/letsencrypt/:rw
+#    certbot:
+#        image: certbot/certbot:v2.6.0
+#        volumes:
+#          - ./certbot/www/:/var/www/certbot/:rw
+#          - ./certbot/conf/:/etc/letsencrypt/:rw
 
 networks:
   internal:
