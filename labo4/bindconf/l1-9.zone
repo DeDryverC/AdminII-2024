@@ -1,0 +1,13 @@
+$TTL    86400
+@       IN      SOA     ns.l1-9.ephec-ti.be. admin.l1-9.ephec-ti.be. (
+                              2024031101 ; Serial
+                              3600       ; Refresh
+                              1800       ; Retry
+                              604800     ; Expire
+                              86400 )    ; Negative Cache TTL
+;
+@               IN      NS      ns.l1-9.ephec-ti.be.
+ns              IN      A       54.37.12.128
+www             IN      A       54.37.12.128
+ftp             IN      A       54.37.12.128
+

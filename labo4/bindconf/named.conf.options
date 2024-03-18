@@ -1,0 +1,9 @@
+options {
+  directory "/var/cache/bind";
+  // version statement for security to avoid hacking known weaknesses
+  // if the real version number is revealed
+  version "not currently available";
+  allow-query { any; };
+  allow-query-cache { none; };
+  recursion no;
+}

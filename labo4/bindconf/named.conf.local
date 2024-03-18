@@ -1,0 +1,9 @@
+zone "l1-9.ephec-ti.be." {
+  type master;
+  file "/etc/bind/l1-9.zone";
+  allow-transfer {
+    none;
+  };
+  inline-signing yes;
+  dnssec-policy default;
+};
