@@ -48,5 +48,5 @@ INSERT INTO `woodytoys`.`contact`
 VALUES
 (1, 'Customer One', FALSE, TRUE, 'customer1@abcompany.be', '04700000004'), (2, 'George Doe', FALSE, TRUE, 'g.doe@dfg.inc', '04704700004'), (3, 'ABC Company', TRUE, FALSE, 'contact@abcompany.be', '04700000004');
 
-CREATE USER admin_woodytoys IDENTIFIED WITH mysql_native_password BY 'password123';
+CREATE USER admin_woodytoys IDENTIFIED BY 'password123';
 GRANT ALL PRIVILEGES ON woodytoys.articles TO 'admin_woodytoys';
