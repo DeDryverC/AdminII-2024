@@ -1,5 +1,5 @@
 <?php
-    define("DB_HOST", "mysql");
+    define("DB_HOST", "mariadb");
     define("DB_USERNAME", "admin");
     define("DB_PASSWORD", "admin123");
     define("DB_NAME", "woodytoys");
@@ -43,7 +43,7 @@
     <body style="font-family: Calibri">
         <h1> WoodyToys Intranet</h1>
         <br/>
-        <a style="margin-left:25px;" href="https://woodytoys.l1-9.ephec-ti.be">Site vitrine</a><a style="margin-left:25px;" href="https://b2b.l1-9.ephec-ti.be">Site vendeur</a>
+        <a style="margin-left:25px;" href="http://woodytoys.l1-9.ephec-ti.be">Site vitrine</a><a style="margin-left:25px;" href="http://b2b.l1-9.ephec-ti.be">Site vendeur</a>
         </br><br/><br/>
         <div id="login_container">
             <form method="POST">
