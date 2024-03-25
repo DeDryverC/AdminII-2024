@@ -7,7 +7,10 @@ $TTL    86400
                               86400 )    ; Negative Cache TTL
 ;
 @               IN      NS      ns.l1-9.ephec-ti.be.
-ns              IN      A       54.37.12.128
+@               IN      A       54.37.12.128
 www             IN      A       54.37.12.128
+ns              IN      A       54.37.12.128
 ftp             IN      A       54.37.12.128
-
+woodytoys       IN      A       54.37.12.128
+b2b             IN      A       54.37.12.128
+erp             IN      A       54.37.12.128
