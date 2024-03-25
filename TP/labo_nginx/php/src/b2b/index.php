@@ -6,7 +6,7 @@
     <body style="font-family: Calibri">
         <h1> WoodyToys b2b</h1>
         <br/>
-        <a style="margin-left:25px;" href="https://woodytoys.seldric.be">Site vitrine</a><a style="margin-left:25px;" href="https://erp.seldric.be">Intranet</a>
+        <a style="margin-left:25px;" href="https://woodytoys.l1-9.ephec-ti.be">Site vitrine</a><a style="margin-left:25px;" href="https://erp.l1-9.ephec-ti.be">Intranet</a>
         </br>
         <div>
             <h3>Mettre un article en vente</h3>
