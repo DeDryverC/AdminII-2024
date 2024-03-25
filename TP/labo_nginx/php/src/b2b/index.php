@@ -32,8 +32,8 @@
                 </thead>
                 <?php
                 define("DB_HOST", "mariadb");
-                define("DB_USERNAME", "admin");
-                define("DB_PASSWORD", "admin123");
+                define("DB_USERNAME", "admin_woodytoys");
+                define("DB_PASSWORD", "password123");
                 define("DB_NAME", "woodytoys");
                 $conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                 
