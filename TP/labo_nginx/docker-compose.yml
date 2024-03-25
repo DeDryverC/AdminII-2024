@@ -13,9 +13,9 @@ services:
             - ./nginx/conf/core.conf:/etc/nginx/conf.d/core.conf:ro
             - ./nginx/conf/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
             - ./nginx/conf/portal.conf:/etc/nginx/conf.d/portal.conf:ro
-            - ./web/src/portal:/var/www/portal/html:ro
-            - ./web/src/b2b:/var/www/b2b/html:ro
-            - ./web/src/erp:/var/www/erp/html:ro
+            - ./php/src/portal:/var/www/portal/html:ro
+            - ./php/src/b2b:/var/www/b2b/html:ro
+            - ./php/src/erp:/var/www/erp/html:ro
         ports:
             - "80:80"
             - "443:443"
