@@ -1,3 +1,4 @@
+$ORIGIN l1-9.ephec-ti.be.
 $TTL    86400
 @       IN      SOA     ns.l1-9.ephec-ti.be. admin.l1-9.ephec-ti.be. (
                               2024031101 ; Serial
@@ -7,7 +8,6 @@ $TTL    86400
                               86400 )    ; Negative Cache TTL
 ;
 @               IN      NS      ns.l1-9.ephec-ti.be.
-@               IN      A       54.37.12.128
 www             IN      A       54.37.12.128
 ns              IN      A       54.37.12.128
 ftp             IN      A       54.37.12.128
