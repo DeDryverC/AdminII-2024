@@ -6,6 +6,4 @@ options {
   allow-query { any; };
   allow-query-cache { none; };
   recursion no;
-  dnssec-enable yes;
-  dnssec-validation auto;
-}
+};
