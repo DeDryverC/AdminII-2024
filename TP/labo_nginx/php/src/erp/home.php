@@ -38,7 +38,7 @@
     <body style="font-family: Calibri">
         <h1> WoodyToys Intranet</h1>
         <br/>
-        <a style="margin-left:25px;" href="https://woodytoys.seldric.be">Site vitrine</a><a style="margin-left:25px;" href="https://b2b.seldric.be">Site vendeur</a>
+        <a style="margin-left:25px;" href="https://woodytoys.l1-9.ephec-ti.be">Site vitrine</a><a style="margin-left:25px;" href="https://b2b.l1-9.ephec-ti.be">Site vendeur</a>
         </br><br/><br/>
         <?php
             if(isset($_GET["uuid"])) {
